@@ -359,15 +359,25 @@ console.log(result)
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
-
+/*const getMovieById = function (id) {
+  for (i= 0; i<movies.length; i ++ ){
+     movies[i][id]
+  }
+  console.log(movies)
+}
+getMovieById(movies[imdbID])*/
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
+ 
 
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
-
+const searchByTitle = function (str) {
+  console.log(movies[str])
+}
+searchByTitle('Title')
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
     this object should contain an array called "match", made by all the movies which contain the given string in the title,
@@ -401,5 +411,29 @@ console.log(result)
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
+const isItPrime = function (number) {
+  let isPrime = true
+  if (number === 1) {
+    console.log("1 is neither prime nor composite number.");
+}
+else if (number > 1) {
+    for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        console.log(`${number} is a prime number`);
+    } else {
+        console.log(`${number} is a not prime number`);
+    }
+}
+else {
+    console.log("The number is not a prime number.");
+}
+}
+isItPrime(7)
 
 /* This movies array is used throughout the exercises. Please don't change it :)  */
