@@ -21,7 +21,7 @@ let test = "Vijay Kumar Vemana"
 /* Ex.B
     Create a variable called "sum" and assign to it the result of the sum between 10 and 20.
 */
-let sum = 10 + 20
+let sum1 = 10 + 20
 
 /* Ex.C 
     Create a variable called "random" and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
@@ -115,13 +115,25 @@ console.log(removeChar)
     console.log(removeNumbers)
   }
   onlyLetters("hi! 54674strivers46")
+
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
+const isThisAnEmail = function (email) {
+  let  verification = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return verification.test(String(email).toLowerCase());
+}
+console.log(isThisAnEmail("vemanav@gmail.com"))
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
 */
+const whatDayIsIt = function () {
+   let date = new Date()
+   let weekday = date.toLocaleString("default", { weekday: "long" })
+   console.log(weekday)  
+}
+whatDayIsIt()
 
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
@@ -133,14 +145,43 @@ console.log(removeChar)
         values: [3, 3, 4]
     }
 */
-
+const rollTheDices = function (number) {
+  let sum = 0
+  let arr1 = []
+    for (let i = 0; i < number; i++){
+      let randomNumber = dice()
+      arr1.push(randomNumber)
+      sum +=randomNumber
+      }
+      console.log(arr1)
+    return sum
+}
+console.log(rollTheDices(6))
 /* Ex.9
+
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
-
+ const howManyDays  = function (date) {
+   let current = new Date(date.getTime());
+   let previous = new Date(date.getFullYear(), 0, 1);
+   return Math.ceil((current - previous + 1) / 86400000);
+}
+ console.log(howManyDays(new Date(2021, 6, 28)))
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
+const isTodayMyBirthday = function (date) {
+  let today = new Date()
+  let birthDate = new Date(date)
+  if (today === birthDate) 
+    {
+      return true
+    }else{
+      return false
+    }
+} 
+let date = new Date(2021, 6, 18)
+console.log(isTodayMyBirthday(date))
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
@@ -148,6 +189,10 @@ console.log(removeChar)
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns the given object after deleting its property named as the given string.
 */
+const deleteProp = (obj, str) => {
+  let movie = obj.map((el) => el);
+  return movie[str];
+};
 
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
