@@ -16,39 +16,70 @@
    Create a variable called "test" and assign a string to it.
 */
 
+let test = "Vijay Kumar Vemana"
+
 /* Ex.B
     Create a variable called "sum" and assign to it the result of the sum between 10 and 20.
 */
+let sum = 10 + 20
 
 /* Ex.C 
     Create a variable called "random" and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 */
 
+let random = Math.floor(Math.random() * 21)
+console.log(random)
+
 /* Ex.D
     Create a variable called "me" and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 */
+let me = {
+  name : "Vijay Kumar",
+  surname : "Vemana",
+  age : 26
+}
+console.log(me)
 
 /* Ex.E 
     Programmatically remove the age property from the previously create object.
 */
 
+delete me.age
+console.log(me)
+
 /* Ex.F 
    Programmatically add to the object me an array called "skills", containing the programming languages you know right now.
 */
 
+let skills = ["javaScript", "python"]
+me["skills"] = skills
+console.log(me)
+
+
 /* Ex.G 
    Programmatically remove the last skill from the "skills" array inside the "me" object.
 */
+let removeLastSkill = me["skills"].shift()
+console.log(removeLastSkill)
 
 // JS Functions
 /* Ex.1
     Write a function called "dice"; it should randomize an integer number between 1 and 6.
 */
 
+const dice = function () {
+  return Math.round(Math.random() * 5 + 1)
+}
+console.log(dice())
+
 /* Ex.2 
     Write a function called "whoIsBigger" which receives 2 numbers as parameters and returns the biggest one.
 */
-
+const whoIsBigger = function (value1 , value2) {
+  return value1 > value2 ? value1 : value2
+}
+let biggest = whoIsBigger(45, 589)
+console.log(biggest)
 /* Ex.3
     Write a function called "splitMe" which receives a string as a parameter and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]
