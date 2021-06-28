@@ -59,6 +59,7 @@ console.log(me)
 /* Ex.G 
    Programmatically remove the last skill from the "skills" array inside the "me" object.
 */
+
 let removeLastSkill = me["skills"].shift()
 console.log(removeLastSkill)
 
@@ -80,20 +81,40 @@ const whoIsBigger = function (value1 , value2) {
 }
 let biggest = whoIsBigger(45, 589)
 console.log(biggest)
+
 /* Ex.3
     Write a function called "splitMe" which receives a string as a parameter and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
 
+const splitMe = function (string) {
+  let  array = string.split(" ")
+  console.log(array)
+}
+splitMe("this is strive school")
+
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
+ const deleteOne =  function (str, bool) {
+    if (bool === true){
+      return str.substring(1)
+    }else{
+      return str.slice(0, -1)
+    }
+ }
+let removeChar = deleteOne("hello! everybody", false)
+console.log(removeChar)
 
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
-*/
-
+   */
+  const onlyLetters = function (string) {
+    let removeNumbers = string.replace(/[0-9]/g, '')
+    console.log(removeNumbers)
+  }
+  onlyLetters("hi! 54674strivers46")
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
